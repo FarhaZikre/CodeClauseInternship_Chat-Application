@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Ubuntu:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #baf8d1;
+    background: linear-gradient(to right,#baf8d1 , #BEF2F5);
+}
+
+.container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.username-section,
+.chat-section {
+    padding: 20px;
+    width: 800px;
+    max-width: 90%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    background: #fff;
+    /* White background for specific sections */
+    border-radius: 0.5rem;
+} 
+
+.chat-section .brand {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Outfit', sans-serif;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand h1 {
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 10rem;
+    background: linear-gradient(to right, #C37678, #00ABD5);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: 'Nova Square', sans-serif;
+}
+
+.username-input {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.username-input input {
+    margin-bottom: 10px; /* Add some spacing between input and button */
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.username-input button {
+    margin-left: 10px;
+    padding: 10px 18px;
+    background-color: #57d887;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.username-input button:active {
+    background-color: #40cb73;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message_area {
+    height: 500px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-top: 40px;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    outline: none;
+    background: #FBFBFB;
+    pointer-events: none;
+    /* Disable textarea until username is submitted */
+}
+
+.username-input input:focus+button {
+    pointer-events: auto;
+    /* Enable button when the username is being entered */
+}
+
+.message {
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    max-width: 300px;
+    position: relative;
+}
+
+.incoming {
+    background: #BEF2F5;
+    color: #4d4d50;
+}
+
+.outgoing {
+    background: #fbecc6;
+    color: #4d4d50;
+    margin-left: auto;
+}
+
+.message h4 {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.message-write {
+    display: flex;
+    align-items: center;
+}
+
+#textarea {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#textarea:disabled,
+#send:disabled {
+    background: #999;
+    /* Grayed out color for disabled state */
+    cursor: not-allowed;
+    /* Show not-allowed cursor for disabled state */
+}
+
+#send {
+    margin-left: 10px;
+    padding: 10px 18px;
+    background-color: #4ac979;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#send:active {
+    background-color: #40cb73;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Media query for screens with a width less than 600 pixels */
+@media only screen and (max-width: 600px) {
+    .username-section,
+    .chat-section {
+        width: 80%;
+    }
+    .username-input {
+        flex-direction: column; /* Stack items vertically */
+        align-items: stretch; /* Stretch items to full width */
+    }
+
+    .username-input input {
+        margin-bottom: 10px;
+    }
+
+    .username-input button {
+        margin-left: 0; /* Reset the left margin */
+    }
+    .message_area {
+        height: 300px;
+    }
+}
+
