@@ -1,5 +1,7 @@
 This is Real time Chat Application proejct using Websockets and Socket.io
-I used express.js to work with cliet and server
+
+I used express.js to work with client and server
+
 In this project i make server.js and client.js files for preocessing real time chat 
 
 Download the project
